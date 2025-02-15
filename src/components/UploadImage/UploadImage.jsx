@@ -1,7 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import "./UploadImage.css";
 import { Button, Group } from "@mantine/core";
+
 const UploadImage = ({
   propertyDetails,
   setPropertyDetails,
@@ -9,43 +10,46 @@ const UploadImage = ({
   prevStep,
 }) => {
   const [imageURL, setImageURL] = useState(propertyDetails.image);
-  const cloudinaryRef = useRef();
-  const widgetRef = useRef();
+  const [file, setFile] = useState(null);
+
+  // Handle file upload
+  const handleFileUpload = (event) => {
+    const selectedFile = event.target.files[0];
+    if (selectedFile) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setImageURL(reader.result); // Set the image URL for preview
+        setFile(selectedFile); // Save the file for later use
+      };
+      reader.readAsDataURL(selectedFile);
+    }
+  };
+
+  // Handle next step
   const handleNext = () => {
     setPropertyDetails((prev) => ({ ...prev, image: imageURL }));
     nextStep();
   };
-  useEffect(() => {
-    cloudinaryRef.current = window.cloudinary;
-    widgetRef.current = cloudinaryRef.current.createUploadWidget(
-      {
-        cloudName: "dcdhklrjc",
-        uploadPreset: "vx0dyjgc",
-        maxFiles: 1,
-      },
-      (err, result) => {
-        if (result.event === "success") {
-          setImageURL(result.info.secure_url);
-        }
-      }
-    );
-  }, []);
+
   return (
     <div className="flexColCenter uploadWrapper">
       {!imageURL ? (
-        <div
-          className="flexColCenter uploadZone"
-          onClick={() => widgetRef.current?.open()}
-        >
-          <AiOutlineCloudUpload size={50} color="grey" />
-          <span>Upload Image</span>
+        <div className="flexColCenter uploadZone">
+          <label htmlFor="file-upload" className="upload-label">
+            <AiOutlineCloudUpload size={50} color="grey" />
+            <span>Upload Image</span>
+          </label>
+          <input
+            id="file-upload"
+            type="file"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleFileUpload}
+          />
         </div>
       ) : (
-        <div
-          className="uploadedImage"
-          onClick={() => widgetRef.current?.open()}
-        >
-          <img src={imageURL} alt="" />
+        <div className="uploadedImage">
+          <img src={imageURL} alt="Uploaded" />
         </div>
       )}
 
