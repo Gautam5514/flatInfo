@@ -3,61 +3,57 @@ import './Properties.css';
 
 const Properties = () => {
     return (
-        <div className="about-container">
-            <h1>About Our Company</h1>
+      <div className="properties-container">
+        <h1>About Our Real Estate Company</h1>
 
-            <section className="about-section">
-                <h2>What We Do</h2>
-                <p>
-                    FutureBlink is a leading software solutions company specializing in full-stack development,
-                    automated testing, and scalable cloud applications. We deliver cutting-edge technology
-                    solutions that empower businesses to achieve their digital transformation goals.
-                </p>
-            </section>
+        <section className="properties-section">
+          <h2>What We Do</h2>
+          <p>
+            At FlatInfo, we specialize in providing comprehensive real estate solutions. Our services include property management, real estate investment consulting, and residential and commercial property sales and leasing. We are committed to helping our clients find their dream properties and make informed investment decisions.
+          </p>
+        </section>
 
-            <section className="about-section">
-                <h2>Our Achievements</h2>
-                <ul>
-                    <li>Successfully developed and launched 20+ enterprise applications.</li>
-                    <li>Worked with 50+ global clients across various industries.</li>
-                    <li>Recognized for innovation in AI-driven automation and web development.</li>
-                </ul>
-            </section>
+        <section className="properties-section">
+          <h2>Our Achievements</h2>
+          <ul>
+            <li>Successfully managed over 500 properties across various regions.</li>
+            <li>Assisted 1000+ clients in buying, selling, and leasing properties.</li>
+            <li>Recognized for excellence in customer service and market expertise.</li>
+          </ul>
+        </section>
 
-            <section className="about-section">
-                <h2>Major Roles & Industries</h2>
-                <p>
-                    Our company plays a crucial role in industries such as **Fintech, E-commerce, EdTech, and
-                    SaaS development**. We focus on building secure, high-performance, and scalable applications.
-                </p>
-            </section>
+        <section className="properties-section">
+          <h2>Major Roles & Industries</h2>
+          <p>
+            Our company plays a crucial role in the real estate industry, focusing on residential, commercial, and industrial properties. We aim to provide secure, high-value, and profitable real estate solutions to our clients.
+          </p>
+        </section>
 
-            <section className="about-section">
-                <h2>Where We Work</h2>
-                <p>
-                    Currently, we operate in three major cities:
-                    <ul>
-                        <li><strong>Ranchi:</strong> Headquarters and R&D Center</li>
-                        <li><strong>Noida:</strong> Corporate and Client Management Office</li>
-                        <li><strong>Vrindavan:</strong> Special Projects & Innovation Hub</li>
-                    </ul>
-                </p>
-            </section>
+        <section className="properties-section">
+          <h2>Where We Work</h2>
+          <p>
+            Currently, we operate in three major cities:
+            <ul>
+              <li><strong>Ranchi:</strong> Headquarters and Property Management Office</li>
+              <li><strong>Noida:</strong> Corporate and Client Relations Office</li>
+              <li><strong>Vrindavan:</strong> Special Projects & Development Hub</li>
+            </ul>
+          </p>
+        </section>
 
-            <section className="about-section">
-                <h2>Our 5-Year Goal</h2>
-                <p>
-                    Over the next 5 years, our goal is to:
-                    <ul>
-                        <li>Expand our team to 500+ tech professionals.</li>
-                        <li>Become a global leader in AI-powered automation and web applications.</li>
-                        <li>Establish offices in 10+ countries.</li>
-                        <li>Develop products that impact millions of users worldwide.</li>
-                    </ul>
-                </p>
-            </section>
-
-        </div>
+        <section className="properties-section">
+          <h2>Our 5-Year Goal</h2>
+          <p>
+            Over the next 5 years, our goal is to:
+            <ul>
+              <li>Expand our portfolio to 1000+ properties.</li>
+              <li>Become a leading real estate company in the region.</li>
+              <li>Establish offices in 10+ major cities.</li>
+              <li>Develop sustainable and innovative real estate projects.</li>
+            </ul>
+          </p>
+        </section>
+      </div>
     );
 };
 
