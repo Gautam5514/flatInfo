@@ -37,6 +37,7 @@ function App() {
                 </Route>
                 <Route path="/bookings" element={<Bookings />} />
                 <Route path="/favourites" element={<Favourites />} />
+                
               </Route>
             </Routes>
           </Suspense>

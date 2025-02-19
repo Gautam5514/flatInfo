@@ -5,7 +5,6 @@ import { getMenuStyles } from "../../utils/common";
 import useHeaderColor from "../../hooks/useHeaderColor";
 import OutsideClickHandler from "react-outside-click-handler";
 import { Link, NavLink } from "react-router-dom";
-import { useAuth0 } from "@auth0/auth0-react";
 
 const Header = () => {
   const [menuOpened, setMenuOpened] = useState(false);
@@ -30,9 +29,8 @@ const Header = () => {
             className="flexCenter h-menu"
             style={getMenuStyles(menuOpened)}
           >
-            <NavLink to="/properties">Properties</NavLink>
-
-
+            <NavLink to="/properties">About</NavLink>
+            <NavLink to="/bookings">Booking</NavLink>
             
             {/* login button */}
                   

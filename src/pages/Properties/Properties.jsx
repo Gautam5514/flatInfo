@@ -1,57 +1,64 @@
-import React, { useState } from "react";
-import SearchBar from "../../components/SearchBar/SearchBar";
-import "./Properties.css";
-import useProperties from "../../hooks/useProperties";
-import { PuffLoader } from "react-spinners";
-import PropertyCard from "../../components/PropertyCard/PropertyCard";
+import React from 'react';
+import './Properties.css';
+
 const Properties = () => {
-  const { data, isError, isLoading } = useProperties();
-  const [filter, setFilter] = useState("");
-  if (isError) {
     return (
-      <div className="wrapper">
-        <span>Error while fetching data</span>
-      </div>
-    );
-  }
+        <div className="about-container">
+            <h1>About Our Company</h1>
 
-  if (isLoading) {
-    return (
-      <div className="wrapper flexCenter" style={{ height: "60vh" }}>
-        <PuffLoader
-          height="80"
-          width="80"
-          radius={1}
-          color="#4066ff"
-          aria-label="puff-loading"
-        />
-      </div>
-    );
-  }
-  return (
-    <div className="wrapper">
-      <div className="flexColCenter paddings innerWidth properties-container">
-        <SearchBar filter={filter} setFilter={setFilter} />
+            <section className="about-section">
+                <h2>What We Do</h2>
+                <p>
+                    FutureBlink is a leading software solutions company specializing in full-stack development,
+                    automated testing, and scalable cloud applications. We deliver cutting-edge technology
+                    solutions that empower businesses to achieve their digital transformation goals.
+                </p>
+            </section>
 
-        <div className="paddings flexCenter properties">
-          {
-            // data.map((card, i)=> (<PropertyCard card={card} key={i}/>))
+            <section className="about-section">
+                <h2>Our Achievements</h2>
+                <ul>
+                    <li>Successfully developed and launched 20+ enterprise applications.</li>
+                    <li>Worked with 50+ global clients across various industries.</li>
+                    <li>Recognized for innovation in AI-driven automation and web development.</li>
+                </ul>
+            </section>
 
-            data
-              .filter(
-                (property) =>
-                  property.title.toLowerCase().includes(filter.toLowerCase()) ||
-                  property.city.toLowerCase().includes(filter.toLowerCase()) ||
-                  property.country.toLowerCase().includes(filter.toLowerCase())
-              )
-              .map((card, i) => (
-                <PropertyCard card={card} key={i} />
-              ))
-          }
+            <section className="about-section">
+                <h2>Major Roles & Industries</h2>
+                <p>
+                    Our company plays a crucial role in industries such as **Fintech, E-commerce, EdTech, and
+                    SaaS development**. We focus on building secure, high-performance, and scalable applications.
+                </p>
+            </section>
+
+            <section className="about-section">
+                <h2>Where We Work</h2>
+                <p>
+                    Currently, we operate in three major cities:
+                    <ul>
+                        <li><strong>Ranchi:</strong> Headquarters and R&D Center</li>
+                        <li><strong>Noida:</strong> Corporate and Client Management Office</li>
+                        <li><strong>Vrindavan:</strong> Special Projects & Innovation Hub</li>
+                    </ul>
+                </p>
+            </section>
+
+            <section className="about-section">
+                <h2>Our 5-Year Goal</h2>
+                <p>
+                    Over the next 5 years, our goal is to:
+                    <ul>
+                        <li>Expand our team to 500+ tech professionals.</li>
+                        <li>Become a global leader in AI-powered automation and web applications.</li>
+                        <li>Establish offices in 10+ countries.</li>
+                        <li>Develop products that impact millions of users worldwide.</li>
+                    </ul>
+                </p>
+            </section>
+
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Properties;
